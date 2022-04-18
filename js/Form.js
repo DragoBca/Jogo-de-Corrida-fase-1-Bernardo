@@ -17,8 +17,20 @@ class Form {
     this.titleImg.class('gameTitle')
     this.input.class("customInput")
     this.playButton.class('customButton')
+    this.greeting.class("greeting")
   }
 
+  buttonMousePressed(){
+    this.playButton.mousePressed(()=>{
+      this.input.hide();
+      this.playButton.hide();
+
+      var message = `Olá ${this.input.value()}!! </br>
+      Aguarde o outro jogador...`
+
+      this.greeting.html(message);
+    }) 
+  }
 
 
   hide() {
@@ -30,6 +42,7 @@ class Form {
   display(){
     this.setElementsPosition()
     this.setElementsStyle()
+    this.buttonMousePressed()
   }
 
 }
